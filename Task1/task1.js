@@ -29,3 +29,12 @@ function reverseNotSpecial(arr){
 
 //Version #2 with ES6 and RegEx
 
+const specialChar = /[^a-zA-Z0-9]/ 
+
+const reverseArrayWithSpecialChars = arr => arr.map(
+  (element, index, a) => specialChar.test(element) ? element : a[a.length - 1 - index]
+  ); 
+  
+  // a = copy of the entire array 
+  // /[^a-zA-Z0-9]/ = not number or string(special)
+

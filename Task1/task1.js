@@ -27,8 +27,8 @@ function reverseNotSpecial(arr){
   return arr
 }
 
-//Version #2 with ES6 and RegEx
 
+//Version #2 with ES6 and RegEx
 const specialChar = /[^a-zA-Z0-9]/ 
 
 const reverseArrayWithSpecialChars = arr => arr.map(

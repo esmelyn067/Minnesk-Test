@@ -1,0 +1,9 @@
+Task 2 - Structure
+
+
+- Create the app with de UI Mock up, using React
+- Fetch the API 
+- Css style 
+- Run the app 
+
+Remember explain all steps using //comments

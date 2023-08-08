@@ -55,6 +55,12 @@ const DogGallery = () => {
     }
   };
 
+  const handleMouseLeave = (index) => {
+    const updatedDogImages = [...dogImages];
+    updatedDogImages[index].subBreeds = [];
+    setDogImages(updatedDogImages);
+  };
+
   return (
     <div className="dog-gallery">
       <h1>Dog Gallery</h1>
@@ -67,24 +73,26 @@ const DogGallery = () => {
               key={imageData.id}
               className="grid-item"
               onMouseEnter={() => handleMouseEnter(imageData.id - 1)}
+              onMouseLeave={() => handleMouseLeave(imageData.id - 1)}
             >
               <img src={imageData.url} alt={`Dog ${imageData.id}`} />
-              <h2>{imageData.breed}</h2>
-              {imageData.subBreeds.length > 0 && (
-                <div className="tooltip">
+              <div className="tooltip">
+                {imageData.subBreeds.length > 0 ? (
                   <ul>
                     {imageData.subBreeds.map((subBreed, index) => (
                       <li key={index}>{subBreed}</li>
                     ))}
                   </ul>
-                </div>
-              )}
+                ) : (
+                  <h2>{imageData.breed}</h2>
+                )}
+              </div>
             </div>
           ))}
         </div>
       )}
     </div>
   );
-};
+};  
 
 export default DogGallery;

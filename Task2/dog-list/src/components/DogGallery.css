@@ -31,6 +31,9 @@
     color: #fff;
     padding: 5px;
     display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
   .tooltip ul {
@@ -44,10 +47,13 @@
   }
   
   .grid-item:hover .tooltip {
-    display: block;
-  }
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
   
-  * Responsive styles for tablets and larger screens */
+  /* Responsive styles for tablets and larger screens */
 @media screen and (min-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
